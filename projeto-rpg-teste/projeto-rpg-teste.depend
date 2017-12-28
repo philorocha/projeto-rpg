@@ -1,8 +1,15 @@
 # depslib dependency file v1.0
-1514434040 source:c:\users\felip\desktop\2va programação\projeto-rpg\projeto-rpg-teste\main.c
+1514468773 source:c:\users\felip\desktop\2va programação\projeto-rpg\projeto-rpg-teste\main.c
 	<stdio.h>
 	<stdlib.h>
 	<locale.h>
 	<string.h>
 	<time.h>
+	"toolbox.h"
+	"personagens.h"
+
+1514468770 c:\users\felip\desktop\2va programação\projeto-rpg\projeto-rpg-teste\toolbox.h
+	"personagens.h"
+
+1514468749 c:\users\felip\desktop\2va programação\projeto-rpg\projeto-rpg-teste\personagens.h
 
