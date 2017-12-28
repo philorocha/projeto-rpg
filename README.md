@@ -53,7 +53,7 @@ Projeto da disciplina de Introdução à Programação
           } else {
             printf("A criatura feriu você em 2.\nAgora você tem %d de energia\n", (*p).energia);
           }
-    }
+      }
 
       if (personagem.habilidade == criatura.habilidade || ((*p).energia != 0 && criatura.energia !=0)) {
         batalha(p, personagem, criatura);
