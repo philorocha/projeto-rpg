@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1514434040 source:c:\users\felip\desktop\2va programação\projeto-rpg\projeto-rpg-teste\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	<string.h>
+	<time.h>
+
