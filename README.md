@@ -32,3 +32,31 @@ Projeto da disciplina de Introdução à Programação
         return rand() % 6 + 1;
     }
     ```
+  * #### void batalha(Personagem *p, Personagem personagem, Criatura criatura); INCOMPLETO!!!!
+    Descrição: O procedimento para batalha recebe três argumentos. Um ponteiro *p do tipo Personagem (struct), um struct Personagem e um struct Criatura.
+    ```c
+    void batalha(Personagem *p, Personagem personagem, Criatura criatura) {
+      criatura.habilidade += dado() + dado(); //Ataque criatura = habilidade + dado + dado
+      personagem.habilidade += dado() + dado(); //Ataque personagem = habilidade + dado + dado
+
+      if (personagem.habilidade > criatura.habilidade) {
+        criatura.energia -= 2;
+        if (criatura.energia <= 0) {
+          printf("Você feriu a criatura em 2.\nParabéns você venceu a batalha!\n");
+        } else {
+          printf("Você feriu a criatura em 2.\nAgora ela tem %d de energia\n", criatura.energia);
+        }
+      } else if (personagem.habilidade < criatura.habilidade) {
+          (*p).energia -= 2;
+          if ((*p).energia <= 0) {
+            printf("A criatura feriu você em 2.\nVocê morreu!\n");
+          } else {
+            printf("A criatura feriu você em 2.\nAgora você tem %d de energia\n", (*p).energia);
+          }
+    }
+
+      if (personagem.habilidade == criatura.habilidade || ((*p).energia != 0 && criatura.energia !=0)) {
+        batalha(p, personagem, criatura);
+      }
+    }
+    ```
