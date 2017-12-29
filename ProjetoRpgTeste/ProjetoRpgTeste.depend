@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1514561213 source:c:\users\felip\desktop\projetorpgteste\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	<string.h>
+	<time.h>
+	"toolbox.h"
+	"personagens.h"
+
+1514561205 c:\users\felip\desktop\projetorpgteste\toolbox.h
+	"personagens.h"
+
+1514555857 c:\users\felip\desktop\projetorpgteste\personagens.h
+

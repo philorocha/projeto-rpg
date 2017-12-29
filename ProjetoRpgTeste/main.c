@@ -11,7 +11,7 @@ int main()
     setlocale(LC_ALL, "Portuguese");
     srand(time(NULL));
 
-    printf("O jogo começou!\n");
+    //printf("O jogo começou!\n");
     Personagem personagem;
     Criatura criatura;
 
@@ -19,12 +19,16 @@ int main()
     personagem.energia = dado() + dado() + 12;
     personagem.sorte = dado() + 6;
 
-    criatura.energia = 8;
-    criatura.habilidade = 12;
+    criatura.energia = 7;
+    criatura.habilidade = 5;
 
     Personagem *p = &personagem;
+    Criatura *c = &criatura;
 
-    batalha(p, personagem, criatura);
+    batalha(p, c);
+
+    printf("FIM DO TESTE!\n");
+    system("pause");
     return 0;
 }
 
