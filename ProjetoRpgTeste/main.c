@@ -11,7 +11,6 @@ int main()
     setlocale(LC_ALL, "Portuguese");
     srand(time(NULL));
 
-    //printf("O jogo começou!\n");
     Personagem personagem;
     Criatura criatura;
 
@@ -19,8 +18,8 @@ int main()
     personagem.energia = dado() + dado() + 12;
     personagem.sorte = dado() + 6;
 
-    criatura.energia = 7;
-    criatura.habilidade = 5;
+    criatura.energia = 10;
+    criatura.habilidade = 6;
 
     Personagem *p = &personagem;
     Criatura *c = &criatura;

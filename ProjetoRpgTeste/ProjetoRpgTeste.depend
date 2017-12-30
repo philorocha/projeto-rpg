@@ -13,3 +13,17 @@
 
 1514555857 c:\users\felip\desktop\projetorpgteste\personagens.h
 
+1514577445 source:c:\users\felip\desktop\2va programação\projeto-rpg\projetorpgteste\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	<string.h>
+	<time.h>
+	"toolbox.h"
+	"personagens.h"
+
+1514597635 c:\users\felip\desktop\2va programação\projeto-rpg\projetorpgteste\toolbox.h
+	"personagens.h"
+
+1514555857 c:\users\felip\desktop\2va programação\projeto-rpg\projetorpgteste\personagens.h
+
