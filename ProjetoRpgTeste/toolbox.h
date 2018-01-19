@@ -1,6 +1,35 @@
     #ifndef TOOLBOX_H_INCLUDED
     #define TOOLBOX_H_INCLUDED
     #include "personagens.h"
+    void save(Personagem personagem) {
+        FILE *fb = fopen("save.bin", "wb");
+
+        if (!fb) {
+            printf("Erro ao tentar salvar.\n");
+            EXIT_FAILURE;
+        }
+
+        fwrite(&personagem, sizeof(Personagem), 1, fb);
+        printf("Salvo.\n");
+        fclose(fb);
+    }
+
+    Personagem load() {
+        Personagem jogador;
+
+        FILE *fb = fopen("save.bin", "rb");
+
+        if (!fb) {
+            printf("Erro ao tentar carregar.\n");
+            EXIT_FAILURE;
+        }
+
+        fread(&jogador, sizeof(Personagem), 1, fb);
+        printf("Carregado.\n");
+        fclose(fb);
+        return jogador;
+
+    }
 
     void ajuda() {
         FILE *f = fopen("ajuda.txt", "r");
@@ -12,6 +41,7 @@
 
         char mensagem[1000];
 
+        system("cls");
         while(fgets(mensagem, 1000, f) != NULL){
             printf("%s", mensagem);
         }
@@ -161,10 +191,6 @@
                         system("pause");
                         break;
                     case 3:
-                        printf("Não implementado ainda.\n");
-                        system("pause");
-                        break;
-                    case 4:
                         ajuda();
                         system("pause");
                         break;
@@ -176,4 +202,49 @@
         }
     }
 
+    void novo_jogo() {
+        Personagem jogador;
+
+        FILE *f = fopen("tela_inicial.txt", "r");
+
+        if (f == NULL) {
+            printf("Erro ao tentar abrir o arquivo.\n");
+            exit(1);
+        }
+
+        char mensagem[1000];
+
+        system("cls");
+        while(fgets(mensagem, 1000, f) != NULL){
+            printf("%s", mensagem);
+        }
+
+        fclose(f);
+
+        int opcao;
+        scanf("%d", &opcao);
+
+        switch (opcao) {
+            case 1:
+                do {
+                    printf("Nome do Jogador: ");
+                    fflush(stdin);
+                    gets(jogador.nome);
+                } while (strlen(jogador.nome) < 1);
+                jogador.habilidade = dado() + 6;
+                jogador.energia = dado() + dado() + 12;
+                jogador.sorte = dado() + 6;
+                save(jogador);
+                break;
+            case 2:
+                jogador = load();
+                printf("Nome: %s\n", jogador.nome);
+                printf("Energia: %d\n", jogador.energia);
+                printf("Habilidade: %d\n", jogador.habilidade);
+                printf("Sorte: %d\n", jogador.sorte);
+                break;
+            default:
+                printf("Opção inválida.\n");
+        }
+    }
     #endif // TOOLBOX_H_INCLUDED
