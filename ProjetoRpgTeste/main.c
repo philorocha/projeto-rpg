@@ -26,7 +26,7 @@ int main()
     printf("FIM DO TESTE!\n");
     system("pause");*/
 
-    novo_jogo();
+    //novo_jogo();
     /*FILE *fb = fopen("desafios\\desafios.bin", "ab");
     //FILE *fb2 = fopen("desafios\\d1.txt", "rb");
     //char texto[1000];
@@ -46,6 +46,8 @@ int main()
     fclose(fb2);
     fclose(fb);
     //fclose(fb2);*/
+
+    printf("Hello World.\n");
     return 0;
 }
 
