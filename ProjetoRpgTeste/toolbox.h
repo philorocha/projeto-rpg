@@ -104,21 +104,23 @@
     }
 
     void batalha(Personagem *p, Criatura *c) {
-        while ((*p).energia > 0 && (*c).energia > 0) { //A batalha continua equanto a energia do personagem e da criatura for > 0
-            int ataque_personagem = (*p).habilidade + dado() + dado(); //Definindo a força de ataque do personagem
-            int ataque_criatura = (*c).habilidade + dado() + dado(); //Definindo a força de ataque da criatura
-            int opcao = 1;
+        while ((*p).energia > 0 && (*c).energia > 0) {
+            int ataque_personagem = (*p).habilidade + dado() + dado();
+            int ataque_criatura = (*c).habilidade + dado() + dado();
+            char opcao;
             do {
-                interface(p, c); //Chamada à função interface que imprime o status do personagem e criatura na tela
-                scanf("%d", &opcao); //Lê a opção do jogador (ataque, fugir...)
+                interface(p, c);
+                scanf("%c", &opcao);
+                fflush(stdin);
                 switch (opcao) {
-                    case 1:
+                    case '1':
                         if (ataque_personagem > ataque_criatura) {
                                 interface_sorte_ataque();
-                                int opcao_sorte;
-                                scanf("%d", &opcao_sorte);
+                                char opcao_sorte;
+                                scanf("%c", &opcao_sorte);
+                                fflush(stdin);
                                 switch (opcao_sorte) {
-                                    case 1:
+                                    case '1':
                                         if (testarSorte(p)) {
                                             (*c).energia -= 4;
                                             if ((*c).energia <= 0) {
@@ -135,7 +137,7 @@
                                             }
                                         }
                                         break;
-                                    case 2:
+                                    case '2':
                                         (*c).energia -= 2;
                                         if ((*c).energia <= 0) {
                                             printf("VOCÊ FERIU A CRIATURA EM 2.\nPARABÉNS VOCÊ VENCEU A BATALHA!\n");
@@ -149,10 +151,10 @@
                                 system("pause");
                         } else if (ataque_personagem < ataque_criatura) {
                             interface_sorte_energia();
-                            int opcao_sorte;
-                            scanf("%d", &opcao_sorte);
+                            char opcao_sorte;
+                            scanf("%c", &opcao_sorte);
                             switch (opcao_sorte) {
-                                case 1:
+                                case '1':
                                     if (testarSorte(p)) {
                                         (*p).energia -= 1;
                                         if ((*p).energia <= 0) {
@@ -169,7 +171,7 @@
                                         }
                                     }
                                     break;
-                                case 2:
+                                case '2':
                                     (*p).energia -= 2;
                                     if ((*p).energia <= 0) {
                                         printf("A CRIATURA ESQUIVOU E FERIU VOCÊ EM 2.\nVOCÊ MORREU!\n");
@@ -186,19 +188,20 @@
                             system("pause");
                         }
                         break;
-                    case 2:
+                    case '2':
                         printf("Não implementado ainda.\n");
                         system("pause");
                         break;
-                    case 3:
+                    case '3':
                         ajuda();
                         system("pause");
                         break;
                     default:
                         printf("Opção inválida.\n");
+                        getchar();
                 }
                 system("cls");
-            } while(opcao != 1 && opcao != 2 && opcao != 3 && opcao != 4);
+            } while(opcao != '1' && opcao != '2' && opcao != '3' && opcao != '4');
         }
     }
 
@@ -221,11 +224,11 @@
 
         fclose(f);
 
-        int opcao;
-        scanf("%d", &opcao);
-
+        char opcao;
+        scanf("%c", &opcao);
+        fflush(stdin);
         switch (opcao) {
-            case 1:
+            case '1':
                 do {
                     printf("Nome do Jogador: ");
                     fflush(stdin);
@@ -236,7 +239,7 @@
                 jogador.sorte = dado() + 6;
                 save(jogador);
                 break;
-            case 2:
+            case '2':
                 jogador = load();
                 printf("Nome: %s\n", jogador.nome);
                 printf("Energia: %d\n", jogador.energia);

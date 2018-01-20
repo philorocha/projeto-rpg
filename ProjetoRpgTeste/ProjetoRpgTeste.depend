@@ -41,3 +41,17 @@
 
 1516393456 c:\users\felip\desktop\2va_ip\projeto-rpg\projetorpgteste\personagens.h
 
+1516465120 source:c:\users\felip\documents\c\projeto-rpg\projetorpgteste\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	<string.h>
+	<time.h>
+	"toolbox.h"
+	"personagens.h"
+
+1516467413 c:\users\felip\documents\c\projeto-rpg\projetorpgteste\toolbox.h
+	"personagens.h"
+
+1516461604 c:\users\felip\documents\c\projeto-rpg\projetorpgteste\personagens.h
+
