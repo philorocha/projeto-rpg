@@ -11,7 +11,7 @@ int main()
     setlocale(LC_ALL, "Portuguese");
     srand(time(NULL));
 
-    /*Personagem personagem;
+    Personagem personagem;
     Criatura criatura;
 
     personagem.habilidade = dado() + 6;
@@ -24,7 +24,7 @@ int main()
     batalha(&personagem, &criatura);
 
     printf("FIM DO TESTE!\n");
-    system("pause");*/
+    system("pause");
 
     //novo_jogo();
     /*FILE *fb = fopen("desafios\\desafios.bin", "ab");
@@ -45,9 +45,8 @@ int main()
     //printf("%d\n", i);
     fclose(fb2);
     fclose(fb);
-    //fclose(fb2);*/
+    //fclose(fb2);
 
-    printf("Hello World.\n");
     return 0;
 }
 
